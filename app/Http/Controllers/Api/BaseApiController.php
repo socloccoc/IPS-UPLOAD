@@ -21,7 +21,7 @@ class BaseApiController extends Controller
     {
         $response = [
             'success' => true,
-            'message'    => ''
+            'ip'    => $result
         ];
 
         return response()->json($response, Response::HTTP_OK);

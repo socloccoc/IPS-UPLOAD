@@ -18,5 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
-
+    Route::get('/getIpByLocale/{locale}', [
+        'as' => 'ip.getIp',
+        'uses' => 'IpApiController@getIpByLocale'
+    ]);
 });
