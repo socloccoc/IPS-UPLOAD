@@ -37,19 +37,19 @@ class MyController extends Controller
             }
             $data = [];
             foreach ($fileContent as $item) {
-                $ipInfo = explode('|', $item);
-                if ($this->checkIpExist($ipInfo)) {
-                    continue;
-                }
+//                $ipInfo = explode('|', $item);
+//                if ($this->checkIpExist($ipInfo)) {
+//                    continue;
+//                }
                 $data[] = [
-                    'ip_address' => isset($ipInfo[0]) ? trim($ipInfo[0]) : '',
-                    'user'       => isset($ipInfo[1]) ? trim($ipInfo[1]) : '',
-                    'password'   => isset($ipInfo[2]) ? trim($ipInfo[2]) : '',
-                    'country'    => isset($ipInfo[3]) ? trim($ipInfo[3]) : '',
-                    'locale'     => strtoupper(trim($this->get_string_between($ipInfo[3], '(', ')'))),
-                    'note'       => isset($ipInfo[4]) ? trim($ipInfo[4]) : '',
-                    'code'       => isset($ipInfo[5]) ? trim($ipInfo[5]) : '',
-                    'city'       => isset($ipInfo[6]) ? trim($ipInfo[6]) : '',
+                    'ip_address' => trim($item),
+//                    'user'       => isset($ipInfo[1]) ? trim($ipInfo[1]) : '',
+//                    'password'   => isset($ipInfo[2]) ? trim($ipInfo[2]) : '',
+//                    'country'    => isset($ipInfo[3]) ? trim($ipInfo[3]) : '',
+                    'locale'     => strtoupper(trim($this->get_string_between($item, '(', ')'))),
+//                    'note'       => isset($ipInfo[4]) ? trim($ipInfo[4]) : '',
+//                    'code'       => isset($ipInfo[5]) ? trim($ipInfo[5]) : '',
+//                    'city'       => isset($ipInfo[6]) ? trim($ipInfo[6]) : '',
                     'status'     => 1,
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),

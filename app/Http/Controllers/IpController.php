@@ -16,8 +16,8 @@ class IpController extends Controller
     {
         $ips = DB::table('ip_infomations')
             ->where('status', 1)
-            ->select('country', 'locale', DB::raw('count(*) as total'))
-            ->groupBy('locale', 'country')
+            ->select( 'locale', DB::raw('count(*) as total'))
+            ->groupBy('locale')
             ->get();
         return view('ip.index', compact('ips'));
     }

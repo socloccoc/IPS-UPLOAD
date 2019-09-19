@@ -8,7 +8,7 @@
                 <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
                     <thead>
                     <tr>
-                        <th>Country</th>
+                        {{--<th>Country</th>--}}
                         <th>Locale</th>
                         <th>Number Of Ip</th>
                         <th>Action</th>
@@ -17,7 +17,7 @@
                     <tbody>
                     @forelse($ips as $ip)
                         <tr>
-                            <td>{{ isset($ip->country) ? $ip->country : '' }}</td>
+                            {{--<td>{{ isset($ip->country) ? $ip->country : '' }}</td>--}}
                             <td>{{ isset($ip->locale) ? $ip->locale : '' }}</td>
                             <td>{{ isset($ip->total) ? $ip->total : '' }}</td>
                             <td>
@@ -33,7 +33,7 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th>Country</th>
+                        {{--<th>Country</th>--}}
                         <th>Locale</th>
                         <th>Number Of Ip</th>
                         <th>Action</th>

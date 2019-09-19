@@ -23,7 +23,8 @@ class IpApiController extends BaseApiController
             $ipUpdate = IpInfomation::where('id', $ip['id'])->limit(1)->update(['status' => 0]);
 
             if ($ipUpdate) {
-                $ipInfo = $ip['ip_address'].'|'.$ip['user'].'|'.$ip['password'].'|'.$ip['note'].'|'.$ip['code'].'|'.$ip['city'];
+//                $ipInfo = $ip['ip_address'].'|'.$ip['user'].'|'.$ip['password'].'|'.$ip['note'].'|'.$ip['code'].'|'.$ip['city'];
+                $ipInfo = $ip['ip_address'];
                 return $this->sendResponse($ipInfo, Response::HTTP_OK);
             }
         }catch(\Exception $ex){

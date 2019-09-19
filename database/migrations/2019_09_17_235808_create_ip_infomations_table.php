@@ -15,14 +15,14 @@ class CreateIpInfomationsTable extends Migration
     {
         Schema::create('ip_infomations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('ip_address', 100);
-            $table->string('user', 100);
-            $table->string('password', 100);
-            $table->string('country', 100);
+            $table->text('ip_address');
+//            $table->string('user', 100);
+//            $table->string('password', 100);
+//            $table->string('country', 100);
             $table->string('locale', 20);
-            $table->string('note', 100);
-            $table->integer('code');
-            $table->string('city', 100);
+//            $table->string('note', 100);
+//            $table->integer('code');
+//            $table->string('city', 100);
             $table->tinyInteger('status')->comment('1: active, 0: deactivate');
             $table->timestamps();
         });
