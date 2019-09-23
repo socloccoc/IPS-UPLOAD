@@ -19,11 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('importView', 'MyController@importView')->name('ip.upload');
-Route::get('ip-manager', 'IpController@ipManager')->name('ip.index');
-Route::get('ip-manager/{locale}', 'IpController@deleteIpByLocale')->name('ip.deleteIpByLocale');
-Route::post('import', 'MyController@import')->name('import');
-
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('importView', 'MyController@importView')->name('ip.upload');
+    Route::get('ip-manager', 'IpController@ipManager')->name('ip.index');
+    Route::get('ip-manager/{locale}', 'IpController@deleteIpByLocale')->name('ip.deleteIpByLocale');
+    Route::post('import', 'MyController@import')->name('import');
+});
 Route::match(['get', 'post'], 'register', function () {
     return redirect('/login');
 });
