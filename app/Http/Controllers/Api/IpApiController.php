@@ -20,7 +20,7 @@ class IpApiController extends BaseApiController
                 return $this->sendError('Ip đã được sử dụng hết', Response::HTTP_NOT_FOUND);
             }
 
-            $ipUpdate = IpInfomation::where('id', $ip['id'])->limit(1)->update(['status' => 0]);
+            $ipUpdate = IpInfomation::where('id', $ip['id'])->delete();
 
             if ($ipUpdate) {
 //                $ipInfo = $ip['ip_address'].'|'.$ip['user'].'|'.$ip['password'].'|'.$ip['note'].'|'.$ip['code'].'|'.$ip['city'];
